@@ -8,6 +8,10 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "langchain-core>=1.6.1",
+    "langchain-google-genai>=4.3.7",
+    "langchain-tavily>=0.2.18",
+    "langgraph>=1.2.11",
     "python-dotenv>=1.2.3",
 ]
 
