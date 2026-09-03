@@ -1,21 +1,26 @@
-[tool.poetry]
-name = "langgaph-course"
+[project]
+name = "langgraph-course"
 version = "0.1.0"
 description = ""
-authors = ["Eden Marco <emarco177@gmail.com>"]
 readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Amrio", email = "emarco177@gmail.com" },
+]
+dependencies = [
+    "langchain",
+    "langgraph",
+    "langchain-google_genai",
+    "langchain-openai",
+    "python-dotenv",
+    "black",
+    "isort",
+    "langchain-tavily",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-langchain = "*"
-langgraph = "*"
-langchain-openai = "*"
-python-dotenv = "*"
-black = "*"
-isort = "*"
-langchain-tavily = "*"
-
+[tool.hatch.build.targets.wheel]
+packages = ["src/langgraph_course"]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

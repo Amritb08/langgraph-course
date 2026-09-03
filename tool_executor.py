@@ -2,19 +2,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_core.tools import StructuredTool
-from langchain_tavily import TavilySearch
-from langgraph.prebuilt import ToolNode
 
+from langchain_tavily import TavilySearch
+from langchain_core.tools import StructuredTool
+from langgraph.prebuilt import ToolNode
 from schemas import AnswerQuestion, ReviseAnswer
 
-tavily_tool = TavilySearch(max_results=5)
+tavily_tool = TavilySearch(max_results =5)
 
 
-def run_queries(search_queries: list[str], **kwargs):
+
+def run_queries(search_queries: list[str]) -> list[str]:
     """Run the generated queries."""
-    return tavily_tool.batch([{"query": query} for query in search_queries])
-
+    return tavily_tool.batch([{'query': query} for query in search_queries])
 
 execute_tools = ToolNode(
     [
